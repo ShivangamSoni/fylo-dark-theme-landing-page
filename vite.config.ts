@@ -17,6 +17,18 @@ export default defineConfig({
                 find: "@components",
                 replacement: resolve(__dirname, "src", "components"),
             },
+            {
+                find: "@features",
+                replacement: resolve(__dirname, "src", "features"),
+            },
+            {
+                find: "@layout",
+                replacement: resolve(__dirname, "src", "layout"),
+            },
+            {
+                find: "@pages",
+                replacement: resolve(__dirname, "src", "layout"),
+            },
         ],
     },
 });
