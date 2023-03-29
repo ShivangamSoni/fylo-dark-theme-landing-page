@@ -15,3 +15,45 @@ export const NavLinks = [
         link: "#",
     },
 ];
+
+export const FooterLinks = [
+    [
+        {
+            id: crypto.randomUUID(),
+            label: "About Us",
+            link: "#",
+        },
+        {
+            id: crypto.randomUUID(),
+            label: "Jobs",
+            link: "#",
+        },
+        {
+            id: crypto.randomUUID(),
+            label: "Press",
+            link: "#",
+        },
+        {
+            id: crypto.randomUUID(),
+            label: "Blog",
+            link: "#",
+        },
+    ],
+    [
+        {
+            id: crypto.randomUUID(),
+            label: "Contact Us",
+            link: "#",
+        },
+        {
+            id: crypto.randomUUID(),
+            label: "Terms",
+            link: "#",
+        },
+        {
+            id: crypto.randomUUID(),
+            label: "Privacy",
+            link: "#",
+        },
+    ],
+];
