@@ -3,6 +3,7 @@ import { object, string, InferType } from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import Button from "@components/Button";
+import Input from "@components/Input";
 
 const FormSchema = object({
     email: string()
@@ -41,18 +42,12 @@ export default function NewsLetter() {
                 onSubmit={handleSubmit(onSubmit)}
                 className="grid grid-cols-[1fr_auto] gap-8 items-start text-left"
             >
-                <label>
-                    <span className="sr-only">Email</span>
-                    <input
-                        type="email"
-                        placeholder="email@example.com"
-                        className="w-full rounded-full px-8 py-4 text-xl text-primary-darkBlue-700"
-                        {...register("email")}
-                    />
-                    <span className="px-8 text-sm text-accent-red font-bold">
-                        {errors.email?.message}
-                    </span>
-                </label>
+                <Input
+                    label="Email"
+                    error={errors.email?.message ?? ""}
+                    placeholder="email@example.com"
+                    {...register("email")}
+                />
                 <Button>Get Started For Free</Button>
             </form>
         </div>
