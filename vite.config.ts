@@ -27,7 +27,11 @@ export default defineConfig({
             },
             {
                 find: "@pages",
-                replacement: resolve(__dirname, "src", "layout"),
+                replacement: resolve(__dirname, "src", "pages"),
+            },
+            {
+                find: "@data",
+                replacement: resolve(__dirname, "src", "data"),
             },
         ],
     },
