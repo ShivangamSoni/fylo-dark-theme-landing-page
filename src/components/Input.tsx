@@ -19,11 +19,11 @@ export default forwardRef<HTMLInputElement, InputProps>(function Input(
             <input
                 className={`border-none outline-none focus-within:ring-2 ${
                     error ? "ring-accent-red" : "ring-accent-cyan"
-                } w-full rounded-full px-8 py-4 text-xl text-primary-darkBlue-700`}
+                } w-full rounded-full px-6 md:px-8 py-4 text-base md:text-lg lg:text-xl text-primary-darkBlue-700`}
                 {...rest}
                 ref={ref}
             />
-            <span className="px-8 text-sm text-accent-red font-bold">
+            <span className="px-6 md:px-8 text-xs md:text-sm text-accent-red font-bold">
                 {error || ""}
             </span>
         </label>

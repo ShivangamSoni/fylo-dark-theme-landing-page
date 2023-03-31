@@ -8,19 +8,19 @@ export default function FeaturesSection() {
         <Section>
             <h2 className="sr-only">Features</h2>
             <WidthRestriction>
-                <div className="grid grid-cols-2 w-[min(55rem,100%)] gap-x-12 gap-y-28 mx-auto">
+                <div className="grid md:grid-cols-2 w-[min(55rem,100%)] md:gap-x-12 gap-y-20 md:gap-y-28 px-8 mx-auto">
                     {Features.map(({ id, Icon, title, info }) => (
                         <article
                             key={id}
-                            className="ring-0 flex flex-col items-center justify-start gap-2 text-center"
+                            className="flex flex-col items-center justify-start gap-4 text-center max-w-[30rem] mx-auto md:max-w-none md:mx-0"
                         >
-                            <div className="flex-1 flex items-center justify-center">
+                            <div className="flex-1 flex items-center justify-center mb-4">
                                 <Icon />
                             </div>
-                            <h3 className="text-2xl font-bold font-header">
+                            <h3 className="text-xl md:text-2xl font-bold font-header">
                                 {title}
                             </h3>
-                            <p className="text-base">{info}</p>
+                            <p className="text-sm md:text-base">{info}</p>
                         </article>
                     ))}
                 </div>
