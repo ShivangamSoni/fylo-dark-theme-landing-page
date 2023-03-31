@@ -40,6 +40,10 @@ export default defineConfig({
                 find: "@data",
                 replacement: resolve(__dirname, "src", "data"),
             },
+            {
+                find: "@utils",
+                replacement: resolve(__dirname, "src", "utils"),
+            },
         ],
     },
 });

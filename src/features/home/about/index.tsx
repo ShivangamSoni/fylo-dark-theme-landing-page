@@ -1,3 +1,6 @@
+import { motion, useReducedMotion } from "framer-motion";
+import { zoomIn } from "@utils/variants";
+
 import { StayProductive } from "@assets/Illustrations";
 import { Arrow } from "@assets/Icons";
 
@@ -6,11 +9,17 @@ import WidthRestriction from "@layout/WidthRestriction";
 import Link from "@components/Link";
 
 export default function AboutSection() {
+    const shouldReduceMotion = useReducedMotion();
+
     return (
         <Section className="px-8">
             <WidthRestriction>
                 <div className="grid lg:grid-cols-2 gap-24">
-                    <img
+                    <motion.img
+                        variants={zoomIn}
+                        initial={shouldReduceMotion ? "visible" : "hidden"}
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.6 }}
                         className="justify-self-center"
                         src={StayProductive}
                         alt=""

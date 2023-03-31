@@ -1,3 +1,6 @@
+import { motion, useReducedMotion } from "framer-motion";
+import { zoomIn } from "@utils/variants";
+
 import { Intro } from "@assets/Illustrations";
 
 import Button from "@components/Button";
@@ -5,11 +8,21 @@ import Section from "@layout/Section";
 import WidthRestriction from "@layout/WidthRestriction";
 
 export default function HeroSection() {
+    const shouldReduceMotion = useReducedMotion();
+
     return (
         <Section className="bg-primary-darkBlue-200 py-32 bg-[url(/assets/bg/curvy-desktop.svg)] bg-no-repeat [background-position:bottom] [background-size:100%_10rem] md:[background-size:100%_20rem] lg:[background-size:100%_30rem]">
             <WidthRestriction>
                 <div className="flex flex-col items-center justify-center gap-8 w-[min(55rem,100%)] mx-auto">
-                    <img className="w-full" src={Intro} alt="" />
+                    <motion.img
+                        variants={zoomIn}
+                        initial={shouldReduceMotion ? "visible" : "hidden"}
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.6 }}
+                        className="w-full"
+                        src={Intro}
+                        alt=""
+                    />
                     <div className="text-center grid gap-8">
                         <h2 className="font-bold font-header text-2xl md:text-3xl lg:text-4xl">
                             All your files in one secure location, accessible

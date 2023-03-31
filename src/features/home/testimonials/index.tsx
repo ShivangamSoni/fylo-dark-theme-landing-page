@@ -1,4 +1,6 @@
-import p1 from "@assets/users/profile-1.jpg";
+import { motion, useReducedMotion } from "framer-motion";
+import { popUp } from "@utils/variants";
+
 import { Testimonials } from "@data/Testimonials";
 
 import Section from "@layout/Section";
@@ -6,6 +8,8 @@ import WidthRestriction from "@layout/WidthRestriction";
 import NewsLetter from "../newsletter";
 
 export default function TestimonialsSection() {
+    const shouldReduceMotion = useReducedMotion();
+
     return (
         <Section className="pb-96 px-8 relative">
             <WidthRestriction>
@@ -14,7 +18,16 @@ export default function TestimonialsSection() {
 
                     <div className="grid lg:grid-cols-3 gap-8 relative isolate after:absolute after:-top-9 after:-left-3 after:w-full after:h-full after:-z-[1] after:bg-transparent after:bg-[url(/assets/bg/quotes.png)] after:bg-no-repeat">
                         {Testimonials.map(({ id, review, user }) => (
-                            <article
+                            <motion.article
+                                variants={popUp}
+                                initial={
+                                    shouldReduceMotion ? "visible" : "hidden"
+                                }
+                                whileInView="visible"
+                                viewport={{
+                                    once: true,
+                                    amount: 0.4,
+                                }}
                                 key={id}
                                 className="grid gap-8 p-8 bg-primary-darkBlue-100 rounded-md shadow-lg shadow-primary-darkBlue-200"
                             >
@@ -36,7 +49,7 @@ export default function TestimonialsSection() {
                                         </span>
                                     </figcaption>
                                 </figure>
-                            </article>
+                            </motion.article>
                         ))}
                     </div>
                 </div>

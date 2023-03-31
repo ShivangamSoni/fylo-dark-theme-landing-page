@@ -22,7 +22,8 @@
             "@layout/*": ["src/layout/*"],
             "@pages/*": ["src/pages/*"],
             "@features/*": ["src/features/*"],
-            "@data/*": ["src/data/*"]
+            "@data/*": ["src/data/*"],
+            "@utils/*": ["src/utils/*"]
         }
     },
     "include": ["src", "node_modules/vite-plugin-svgr/client.d.ts"],

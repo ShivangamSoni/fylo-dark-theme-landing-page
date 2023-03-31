@@ -2,6 +2,9 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { object, string, InferType } from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
+import { motion, useReducedMotion } from "framer-motion";
+import { zoomIn } from "@utils/variants";
+
 import Button from "@components/Button";
 import Input from "@components/Input";
 
@@ -14,6 +17,8 @@ const FormSchema = object({
 type FormState = InferType<typeof FormSchema>;
 
 export default function NewsLetter() {
+    const shouldReduceMotion = useReducedMotion();
+
     const {
         register,
         handleSubmit,
@@ -29,7 +34,13 @@ export default function NewsLetter() {
     };
 
     return (
-        <div className="bg-primary-darkBlue-200 grid items-start justify-start gap-8 p-12 text-center w-[min(55rem,96%)] mx-auto rounded-lg shadow-lg shadow-black">
+        <motion.div
+            variants={zoomIn}
+            initial={shouldReduceMotion ? "visible" : "hidden"}
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className="bg-primary-darkBlue-200 grid items-start justify-start gap-8 p-12 text-center w-[min(55rem,96%)] mx-auto rounded-lg shadow-lg shadow-black"
+        >
             <h2 className="font-bold font-header text-xl md:text-2xl lg:text-4xl">
                 Get early access today
             </h2>
@@ -50,6 +61,6 @@ export default function NewsLetter() {
                 />
                 <Button>Get Started For Free</Button>
             </form>
-        </div>
+        </motion.div>
     );
 }
