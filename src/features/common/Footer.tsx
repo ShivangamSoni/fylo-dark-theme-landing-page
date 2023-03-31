@@ -41,7 +41,10 @@ export default function Footer() {
                         </Link>
                     </div>
 
-                    <nav className="grid grid-cols-1 md:grid-cols-2 items-start gap-10 md:gap-2 my-14 md:my-8 lg:my-0">
+                    <nav
+                        aria-label="footer navigation"
+                        className="grid grid-cols-1 md:grid-cols-2 items-start gap-10 md:gap-2 my-14 md:my-8 lg:my-0"
+                    >
                         {FooterLinks.map((links, idx) => (
                             <div key={idx} className="grid gap-4 lg:gap-6">
                                 {links.map(({ id, label, link }) => (

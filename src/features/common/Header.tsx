@@ -43,7 +43,10 @@ export default function Header() {
                         <span className="sr-only">Fylo</span>
                         <img src={Logo} alt="" aria-hidden />
                     </motion.h1>
-                    <motion.nav style={{ height, opacity }}>
+                    <motion.nav
+                        style={{ height, opacity }}
+                        aria-label="primary navigation"
+                    >
                         <ul className="flex items-center gap-8">
                             {NavLinks.map(({ id, label, link }) => (
                                 <li key={id}>

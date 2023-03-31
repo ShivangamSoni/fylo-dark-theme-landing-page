@@ -31,6 +31,9 @@ export default function TestimonialsSection() {
                                 key={id}
                                 className="grid gap-8 p-8 bg-primary-darkBlue-100 rounded-md shadow-lg shadow-primary-darkBlue-200"
                             >
+                                <h3 className="sr-only">
+                                    {user.name}'s Testimonial
+                                </h3>
                                 <p className="text-base md:text-lg lg:text-xl">
                                     {review}
                                 </p>
